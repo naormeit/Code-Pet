@@ -1,75 +1,60 @@
-# React + TypeScript + Vite
+# 🐣 CodePet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**CodePet** is a full-stack, AI-powered productivity companion designed to gamify habit-building and daily consistency. Built with a high-performance "Orbitron" aesthetic, it bridges the gap between secure cloud infrastructure and interactive gamification.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Technical Highlights
 
-## React Compiler
+* **Secure Auth Architecture:** Custom-engineered 6-digit OTP (One-Time Password) verification grid powered by **Supabase Auth** and **Resend SMTP**.
+* **Persistent State:** Real-time cloud synchronization of pet selection, XP, and leveling using **PostgreSQL** and Row Level Security (RLS).
+* **Vibe-Coded UI:** A "Porsche-level" interface featuring glassmorphism, gradient text effects, and custom CSS keyframe animations for a premium feel.
+* **AI Orchestration Ready:** Architected to support multi-model agentic dialogue and evolutionary pet logic.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🛠️ Tech Stack
 
-Note: This will impact Vite dev & build performances.
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | React 18, TypeScript, Vite |
+| **Backend/DB** | Supabase (PostgreSQL) |
+| **Auth/Security** | Supabase GoTrue, Cloudflare Turnstile |
+| **Email Service** | Resend (SMTP Integration) |
+| **Icons/Styling** | Lucide React, Custom CSS Keyframes |
 
-## Expanding the ESLint configuration
+## 📦 Setup & Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/naormeit/Code-Pet.git](https://github.com/naormeit/Code-Pet.git)
+    cd Code-Pet
+    ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3.  **Environment Variables:**
+    Create a `.env` file in the root and add your Supabase credentials:
+    ```env
+    VITE_SUPABASE_URL=your_supabase_url
+    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4.  **Run Development Server:**
+    ```bash
+    npm run dev
+    ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎯 Project Roadmap
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- [x] Professional OTP Authentication Flow
+- [x] Supabase Database Integration
+- [x] Persistent Pet Selection Logic
+- [ ] AI-driven habit coaching (Agentic integration)
+- [ ] Interactive Pet XP & Evolution System
+- [ ] Social Leaderboards for Habit Consistency
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+Developed by [Naorem Ngathoiba Singh](https://github.com/naormeit) — Full-Stack AI Developer & Software Product Engineer.
