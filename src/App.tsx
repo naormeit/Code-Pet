@@ -1148,7 +1148,7 @@ export default function App() {
   //    token refresh, and tab focus (Supabase v2 behaviour).
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
+      async (_event, session) => {
         if (session?.user) {
           setUser(session.user);
 
